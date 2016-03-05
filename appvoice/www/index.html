@@ -20,58 +20,28 @@
 
     <!-- your app's js -->
     <script src="js/app.js"></script>
-
+    <script src="js/send.js"></script>
+    <script src="lib/ng-file-upload/ng-file-upload.js"></script>
     <script src="js/recorderjs/recorder.js"></script>
     <script src="js/main.js"></script>
     <script src="js/result.js"></script>
-
-
-    <script>
-
-    /*
-      var recognition = new webkitSpeechRecognition();
-      recognition.continuous = true;
-      recognition.interimResults = true;
-   
-      recognition.onresult = function (e) {
-          var textarea = document.getElementById('results');
-          for (var i = e.resultIndex; i < e.results.length; ++i) {
-              if (e.results[i].isFinal) {
-                  textarea.value += e.results[i][0].transcript;
-              }
-          }
-      }
-   
-      // start listening
-      recognition.start();
-      */
-
-    </script>
-    
-    <style>
-
-        #record, #save img { height: 15vh; padding: 15px; }
-        
-        #record.recording { 
-          background: red;
-          background: -webkit-radial-gradient(center, ellipse cover, #ff0000 0%,white 75%,white 100%,#7db9e8 100%); 
-          background: -moz-radial-gradient(center, ellipse cover, #ff0000 0%,white 75%,white 100%,#7db9e8 100%); 
-          background: radial-gradient(center, ellipse cover, #ff0000 0%,white 75%,white 100%,#7db9e8 100%); 
-        }
-
-    </style>
 
   </head>
   <body ng-app="starter">
 
     <ion-pane>
       <ion-header-bar class="bar-stable">
-        <h1 class="title">Ionic Blank Starter</h1>
+        <h1 class="title"></h1>
       </ion-header-bar>
       <ion-content>
-
-        <!-- <textarea id="results" cols="80" rows="5"></textarea> -->
-
+        <!-- INICIO ENVIO DE ARQUIVO -->
+        <div ng-controller="MyCtrl">
+          <span>File</span>
+          <input type="file" ngf-select ng-model="picFile" name="file"
+         ngf-model-invalid="errorFile">
+         <button ng-click="uploadPic(picFile)">Submit</button>
+        </div>
+        <!-- FIM ENVIO DE ARQUIVO -->
         <div style="padding:15px;">
 
           <div>
@@ -84,7 +54,7 @@
           <div ng-controller="contactController">
 
             Teste: <input type="text" ng-model="teste">
-            
+
             LABEL: {{teste}}
             <br>
             <br>
