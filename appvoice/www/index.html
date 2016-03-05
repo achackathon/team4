@@ -47,6 +47,19 @@
 
     </script>
     
+    <style>
+
+        #record, #save img { height: 15vh; padding: 15px; }
+        
+        #record.recording { 
+          background: red;
+          background: -webkit-radial-gradient(center, ellipse cover, #ff0000 0%,white 75%,white 100%,#7db9e8 100%); 
+          background: -moz-radial-gradient(center, ellipse cover, #ff0000 0%,white 75%,white 100%,#7db9e8 100%); 
+          background: radial-gradient(center, ellipse cover, #ff0000 0%,white 75%,white 100%,#7db9e8 100%); 
+        }
+
+    </style>
+
   </head>
   <body ng-app="starter">
 
@@ -58,8 +71,18 @@
 
         <!-- <textarea id="results" cols="80" rows="5"></textarea> -->
 
-        <img id="record" src="img/ionic.png" onclick="toggleRecording(this);">
-        <a id="save" href="#"><img src="img/ionic.png"></a>
+        <div style="padding:15px;">
+
+          <div>
+            <img id="record" src="img/mic.svg" onclick="toggleRecording(this);">
+            <a id="save" href="#"><img src="img/download.svg"></a>
+          </div>
+
+          <h3>Output:</h3>
+
+          <div id="chat"></div>
+          
+        <div>
 
       </ion-content>
     </ion-pane>
