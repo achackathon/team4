@@ -1,6 +1,6 @@
 // contact controller
 app.controller('contactController', ['$scope', '$http', function($scope, $http) {
-    
+
     $scope.msgarr = [];
 
     $scope.concatenar = function() {
