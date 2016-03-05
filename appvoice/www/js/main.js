@@ -25,6 +25,8 @@ var analyserContext = null;
 var canvasWidth, canvasHeight;
 var recIndex = 0;
 
+var blobg = null;
+
 /* TODO:
 
 - offer mono option
@@ -51,6 +53,7 @@ function gotBuffers( buffers ) {
 function doneEncoding( blob ) {
     Recorder.setupDownload( blob, "myRecording" + ((recIndex<10)?"0":"") + recIndex + ".wav" );
     recIndex++;
+    blobg = blob;
 }
 
 function toggleRecording( e ) {
