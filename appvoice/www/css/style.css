@@ -7,3 +7,7 @@
   background: -moz-radial-gradient(center, ellipse cover, #ff0000 0%,white 75%,white 100%,#7db9e8 100%);
   background: radial-gradient(center, ellipse cover, #ff0000 0%,white 75%,white 100%,#7db9e8 100%);
 }
+
+.texto-verde{ color: #090; }
+.texto-amarelo{ color: #970; }
+.texto-vermelho{ color: #900; }

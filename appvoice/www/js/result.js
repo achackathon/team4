@@ -5,10 +5,8 @@ app.controller('contactController', ['$scope', 'Upload', '$timeout', '$http', fu
 
     $scope.concatenar = function() {
 
-        //$scope.msgarr.push($scope.teste);
-
-        //obj.results[0].alternatives[0].transcript
-        string = 
+        
+        var string = 
         `{
           "result_index": 0,
           "results": [
@@ -48,18 +46,33 @@ app.controller('contactController', ['$scope', 'Upload', '$timeout', '$http', fu
               ]
             }
           ]
-        }`;
+        }`; //obj.results[0].alternatives[0].transcript
+
+        var texto = '';
+
+        function logArrayElements(element, index, array) {
+            console.log("a[" + index + "] = " + element);
+
+            if (element[1] > 0.7)
+              temp = '<i class="texto-verde">' + element[0] + '</i>';
+            if (element[1] > 0.3)
+              temp = '<i class="texto-amarelo">' + element[0] + '</i>';
+            else
+              temp = '<i class="texto-vermelho">' + element[0] + '</i>';
+
+            texto += temp + ' ';
+
+        }
 
         var obj = JSON.parse(string);
 
-        console.log(obj);
-
-        $scope.msgarr.push(obj.results[0].alternatives[0].transcript);
-
-        console.log($scope.msgarr);
+        var words = obj.results[0].alternatives[0].word_confidence;
         
-        $scope.chat = $scope.msgarr;
+        words.forEach(logArrayElements);
 
+        $scope.msgarr.push(texto);
+
+        $scope.chat = $scope.msgarr;
 
     };
 
@@ -70,9 +83,10 @@ app.controller('contactController', ['$scope', 'Upload', '$timeout', '$http', fu
       
       file.upload = Upload.upload({
         //url: 'http://posttestserver.com/post.php',
-        url: 'http://httpbin.org/post',
+        //url: 'http://httpbin.org/post',
         //url: 'http://requesttb.in/xdo45lxd',
-        data: {file: file},
+        url: 'http://10.0.0.44:8080/upload',
+        data: {file: file}
       });
       
       file.upload.then(function (response) {
