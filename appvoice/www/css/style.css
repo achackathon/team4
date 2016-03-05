@@ -1,5 +1,5 @@
 /* Empty. Add your own CSS if you like */
-#record, #save img { height: 15vh; padding: 15px; }
+#record, #save img { height: 10vh; padding: 15px; }
 
 #record.recording {
   background: red;
@@ -11,3 +11,5 @@
 .texto-verde{ color: #090; }
 .texto-amarelo{ color: #970; }
 .texto-vermelho{ color: #900; }
+
+#app-body{ padding: 15px; }

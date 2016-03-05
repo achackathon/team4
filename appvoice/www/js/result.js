@@ -55,7 +55,7 @@ app.controller('contactController', ['$scope', 'Upload', '$timeout', '$http', fu
 
             if (element[1] > 0.7)
               temp = '<i class="texto-verde">' + element[0] + '</i>';
-            if (element[1] > 0.3)
+            else if (element[1] > 0.3)
               temp = '<i class="texto-amarelo">' + element[0] + '</i>';
             else
               temp = '<i class="texto-vermelho">' + element[0] + '</i>';

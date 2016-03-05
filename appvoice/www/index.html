@@ -29,24 +29,24 @@
   <body ng-app="starter">
 
     <ion-pane>
-      <ion-header-bar class="bar-stable">
-        <h1 class="title">TITULO</h1>
+      <ion-header-bar class="bar-positive">
+        <h1 class="title">VOIX</h1>
       </ion-header-bar>
       <ion-content>
 
-        <div style="padding:15px;">
+        <div id="app-body">
 
           <div>
             <img id="record" src="img/mic.svg" onclick="toggleRecording(this);">
-            <a id="save" href="#" style="display:none"><img src="img/download.svg"></a>
+            <!-- <a id="save" href="#"><img src="img/download.svg"></a> -->
           </div>
 
-          <h3>Output:</h3>
+          <h3>Joãozinho:</h3>
 
           <div ng-controller="contactController">
 
             <button ng-click="concatenar()">Concatenar</button>
-            <button ng-click="uploadPic()" style="display:none">UploadPic</button>
+            <!-- <button ng-click="uploadPic()">UploadPic</button> -->
             <br><br>
 
 
