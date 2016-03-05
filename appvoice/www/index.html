@@ -83,19 +83,10 @@
 
           <div ng-controller="contactController">
 
-            Teste: <input type="text" ng-model="teste">
-            
-            LABEL: {{teste}}
-            <br>
-            <br>
             <button ng-click="concatenar()">Concatenar</button>
-
-            <br><br>
-            <p>{{chat}}</p>
             <br><br>
 
-
-            <div ng-repeat="n in msgarr">
+            <div ng-repeat="n in msgarr track by $index">
               {{n}}
             </div>
 
